@@ -56,6 +56,18 @@ static int cmd_si(char *args) {
 
 }
 
+static int cmd_info(char *args){
+    if(args[0] == 'r'){
+int i = 0;
+       for(i = 0; i < 8; i++){
+       printf("%s %x %d\n", regsl[i], cpu.gpr[i]._32, cpu.gpr[i]._32);
+   }
+ }  
+     return 0;
+}
+  
+    
+
 static int cmd_help(char *args);
 
 static struct {
@@ -67,6 +79,7 @@ static struct {
 	{ "c", "Continue the execution of the program", cmd_c },
 	{ "q", "Exit NEMU", cmd_q },
         { "si", "Single step", cmd_si},
+        { "info", "r for print values of all registers", cmd_info},
 
 	/* TODO: Add more commands */
 
