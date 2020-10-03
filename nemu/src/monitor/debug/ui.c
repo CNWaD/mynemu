@@ -58,7 +58,7 @@ static int cmd_si(char *args) {
 
 static int cmd_info(char *args){
     if(args[0] == 'r'){
-int i = 0;
+      int i;
        for(i = 0; i < 8; i++){
        printf("%s %x %d\n", regsl[i], cpu.gpr[i]._32, cpu.gpr[i]._32);
    }
